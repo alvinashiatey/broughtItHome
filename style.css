@@ -147,7 +147,7 @@ select {
 body {
   width: 100vw;
   min-height: 100vh;
-   min-height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--font-family-primary);
@@ -166,7 +166,7 @@ body {
 }
 
 #bring__it__home {
-  width: inherit;
+  max-width: inherit;
   height: inherit;
   display: flex;
   justify-content: space-between;
@@ -198,20 +198,21 @@ a:not([class]) {
   gap: 2rem;
   margin-left: 3rem;
   position: fixed;
+  z-index: 1000;
 }
 
 header .icons {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-  z-index: 1000;
+  z-index: 2000;
   margin-bottom: 2rem;
 }
 
 header .title {
   text-transform: uppercase;
   line-height: 250%;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 header .title h1:first-child {
@@ -273,7 +274,7 @@ header .title h1:nth-child(5) {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
   padding-right: 2rem; /* Increase/decrease this value for cross-browser compatibility */
   padding-top: 20vh;
   box-sizing: content-box; /* So the width will be 100% + 17px */
@@ -362,10 +363,8 @@ header .title h1:nth-child(5) {
 
 .txt {
   padding: 0;
-  display: flex;
   align-items: left;
   font-family: var(--font-family-secondary);
-  white-space: nowrap;
 }
 
 .blur {
@@ -459,11 +458,11 @@ header .title h1:nth-child(5) {
   }
   .zoom {
     width: auto;
-    word-break:break-all;
+    word-break: break-all;
   }
-  
+
   .zoom a {
-/*      color: tomato; */
+    /*      color: tomato; */
   }
 
   .left__block .about {
@@ -501,7 +500,6 @@ header .title h1:nth-child(5) {
   .right__block main {
     padding: 0;
   }
-
 
   .icon a {
     flex-direction: row-reverse;
