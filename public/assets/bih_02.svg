@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 432"><defs><style> 
+    :root {
+      --color-fill: #fefefe;
+      }
+
+     svg { 
+       cursor: pointer;
+       stroke: var(--color-fill);
+       stroke-miterlimit:10;
+       stroke-width:5px;
+       fill: none;
+     } 
+  </style></defs><g id="GHOST_PRINT_TRANSPARENCY_" data-name="GHOST PRINT (TRANSPARENCY)"><path class="cls-1" d="M277,216c-27.07,2.31-72.11,10.91-102.76,41.57C127.77,304,131.93,383.44,131.93,383.44s79.43,4.15,125.86-42.28C301.68,297.27,300.38,223.91,300.1,216c.28-7.91,1.58-81.27-42.31-125.16C211.36,44.41,131.93,48.56,131.93,48.56S127.77,128,174.21,174.43C204.86,205.09,249.9,213.69,277,216Z"/></g></svg>

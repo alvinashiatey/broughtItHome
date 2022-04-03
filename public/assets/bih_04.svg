@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 432"><defs><style> 
+     :root {
+      --color-fill: #fefefe;
+      }
+
+     svg { 
+       cursor: pointer;
+       stroke: var(--color-fill);
+       stroke-miterlimit:10;
+       stroke-width:5px;
+       fill: none;
+     } 
+  </style></defs><g id="GHOST_PRINT_TRANSPARENCY_" data-name="GHOST PRINT (TRANSPARENCY)"><polygon class="cls-1" points="216 27.68 145.5 331.95 216 404.32 286.5 331.95 216 27.68"/></g></svg>

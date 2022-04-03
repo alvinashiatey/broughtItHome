@@ -1,0 +1,513 @@
+/* fonts */
+@font-face {
+  font-family: "Helvetica";
+  src: url(public/fonts/Helvetica.ttf), url(public/fonts/Helvetica.ttf);
+}
+
+@font-face {
+  font-family: "Marian Black";
+  src: url(public/fonts/Marian-Black.otf), url(public/fonts/Marian-Black.otf);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  height: -webkit-fill-available;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS Reset Ends Here */
+
+:root {
+  --color-border: #231f20;
+  --color-text-main: #231f20;
+  --color-bg: #fefefe;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-height: 30rem;
+  --image-margin: 3rem;
+  --font-family-primary: "Marian Black";
+  --font-family-header-primary: "Marian Black";
+  --font-family-secondary: "Helvetica";
+  --font-family-header-secondary: "Helvetica";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-border: #fefefe;
+    --color-text-main: #fefefe;
+    --color-bg: #231f20;
+    --font-family-primary: "Helvetica";
+    --font-family-header-primary: "Helvetica";
+    --font-family-secondary: "Marian Black";
+    --font-family-header-secondary: "Marian Black";
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-border: #231f20;
+    --color-text-main: #231f20;
+    --color-bg: #fefefe;
+    --font-family-primary: "Marian Black";
+    --font-family-header-primary: "Marian Black";
+    --font-family-secondary: "Helvetica";
+    --font-family-header-secondary: "Helvetica";
+  }
+}
+
+[color-scheme="dark"] {
+  --color-border: #fefefe;
+  --color-text-main: #fefefe;
+  --color-bg: #231f20;
+  --font-family-primary: "Helvetica";
+  --font-family-header-primary: "Helvetica";
+  --font-family-secondary: "Marian Black";
+  --font-family-header-secondary: "Marian Black";
+}
+
+[color-scheme="light"] {
+  --color-border: #231f20;
+  --color-text-main: #231f20;
+  --color-bg: #fefefe;
+  --font-family-primary: "Marian Black";
+  --font-family-header-primary: "Marian Black";
+  --font-family-secondary: "Helvetica";
+  --font-family-header-secondary: "Helvetica";
+}
+
+/* Basic page style resets */
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+   min-height: -webkit-fill-available;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--font-family-primary);
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  position: relative;
+}
+
+#theme__icon {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 3rem;
+  mix-blend-mode: difference;
+}
+
+#bring__it__home {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: scroll;
+  /*   padding: 2rem; /* Increase/decrease this value for cross-browser compatibility */
+  /*   box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-main);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+.left__block,
+.right__block {
+  width: 50%;
+  padding-inline: 1rem;
+}
+
+/* Header */
+
+.left__block header {
+  display: flex;
+  gap: 2rem;
+  margin-left: 3rem;
+  position: fixed;
+}
+
+header .icons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  z-index: 1000;
+  margin-bottom: 2rem;
+}
+
+header .title {
+  text-transform: uppercase;
+  line-height: 250%;
+  z-index: 1000;
+}
+
+header .title h1:first-child {
+  margin-left: 3rem;
+}
+
+header .title h1:nth-child(2) {
+  margin-left: 5rem;
+}
+
+header .title h1:nth-child(4) {
+  margin-left: 7rem;
+}
+
+header .title h1:nth-child(5) {
+  margin-bottom: 1rem;
+}
+
+.title:hover {
+  -webkit-text-stroke-width: 0.25px;
+  filter: blur(1px);
+  transition: filter 1s;
+}
+
+/* Left block */
+
+.left__block {
+  padding: 2rem 2rem 0 0;
+  border-style: solid;
+  border-width: 0px 0.25px 0px 0px;
+  border-color: var(--color-border);
+  /*   float: left; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.left__block .about {
+  margin-left: 3rem;
+  margin-right: 4rem;
+  margin-top: 5rem;
+}
+
+.zoom {
+  margin-bottom: 5rem;
+  transition: all 300ms ease-in-out;
+}
+
+.zoom:hover a h1 {
+  color: #bebebe;
+  /*   color: blue; */
+}
+
+.zoom:hover .zoom_link {
+  text-decoration: underline;
+}
+
+.about__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x:hidden;
+  padding-right: 2rem; /* Increase/decrease this value for cross-browser compatibility */
+  padding-top: 20vh;
+  box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+/* Right block */
+.right__block {
+  padding: 2rem;
+  width: 50%;
+  height: 100%;
+  margin-right: 4rem;
+  /*   overflow: hidden; */
+}
+
+.right__block-container {
+  /*   width: 100%; */
+  height: 100%;
+  /*     overflow-y: scroll; */
+  padding-right: 2rem; /* Increase/decrease this value for cross-browser compatibility */
+  box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+
+.right__block main {
+  padding-left: 2rem;
+}
+
+.artits {
+  text-transform: none;
+}
+
+.works__wrapper {
+  display: flex;
+  gap: 1em;
+}
+
+.works {
+  right: 0;
+  height: 100%;
+}
+
+.works img {
+  height: 100%;
+}
+
+.info__container {
+  position: relative;
+  /*   padding-block-end: var(--image-height); */
+}
+
+.overlap {
+  display: grid;
+}
+
+.l1,
+.l2 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.l1 {
+  font-family: var(--font-family-secondary);
+  letter-spacing: 0.5px;
+}
+
+.l2 {
+  font-family: var(--font-family-primary);
+  align-items: center;
+  -webkit-text-stroke-width: 0.25px;
+  letter-spacing: 0.09em;
+}
+
+.l2:hover {
+  filter: blur(1px);
+  transition: filter 1s;
+}
+
+.imgs {
+  display: flex;
+  max-width: 30rem;
+  /* height: var(--image-height); */
+}
+
+.imgs img {
+  /* width: 100%; */
+}
+
+.txt {
+  padding: 0;
+  display: flex;
+  align-items: left;
+  font-family: var(--font-family-secondary);
+  white-space: nowrap;
+}
+
+.blur {
+  filter: blur(1px);
+  transition: filter 1s;
+}
+
+.blur:hover {
+  filter: blur(0px);
+}
+
+.collapsible {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.artist__name {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.icon:hover .hide {
+  color: var(--color-text-main);
+  /*   padding: 0.5rem; */
+  display: grid;
+}
+
+.icon a {
+  display: flex;
+  gap: 1em;
+  cursor: pointer;
+  background: var(--color-bg);
+}
+
+.icon object {
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.svg__holder {
+  mix-blend-mode: difference;
+}
+
+.icon-blur:hover {
+  cursor: pointer;
+  filter: blur(1px);
+  transition: filter 1s;
+}
+
+@keyframes blur {
+  from {
+    filter: blur(1px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 40em) {
+  .left__block header {
+    justify-content: space-between;
+    position: static;
+  }
+
+  .about__wrapper {
+    padding-top: 0;
+    height: auto;
+    box-sizing: border-box;
+  }
+  .zoom {
+    width: auto;
+    word-break:break-all;
+  }
+  
+  .zoom a {
+/*      color: tomato; */
+  }
+
+  .left__block .about {
+    margin: 0;
+  }
+
+  #bring__it__home {
+    display: block;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+  }
+
+  .left__block {
+    padding: 2rem 0 0 0;
+    height: auto;
+    display: block;
+  }
+
+  .right__block,
+  .left__block {
+    width: 100%;
+    height: auto;
+    border: none;
+    margin: 0 !important;
+  }
+
+  .about.overlap {
+    margin: 0;
+  }
+  .right__block {
+    padding: 0;
+    margin-bottom: 4rem !important;
+  }
+
+  .right__block main {
+    padding: 0;
+  }
+
+
+  .icon a {
+    flex-direction: row-reverse;
+  }
+
+  #theme__icon {
+    padding: 2rem;
+  }
+}
