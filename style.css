@@ -171,6 +171,7 @@ body {
   display: flex;
   justify-content: space-between;
   overflow-y: scroll;
+  overflow-x: hidden;
   /*   padding: 2rem; /* Increase/decrease this value for cross-browser compatibility */
   /*   box-sizing: content-box; /* So the width will be 100% + 17px */
 }
@@ -199,6 +200,7 @@ a:not([class]) {
   margin-left: 3rem;
   position: fixed;
   z-index: 1000;
+  mix-blend-mode: difference;
 }
 
 header .icons {
@@ -213,6 +215,10 @@ header .title {
   text-transform: uppercase;
   line-height: 250%;
   z-index: 2000;
+}
+
+header .title a {
+  color: white;
 }
 
 header .title h1:first-child {
@@ -308,6 +314,7 @@ header .title h1:nth-child(5) {
 .works__wrapper {
   display: flex;
   gap: 1em;
+  padding-block: 0.5rem;
 }
 
 .works {
@@ -322,6 +329,9 @@ header .title h1:nth-child(5) {
 .info__container {
   position: relative;
   /*   padding-block-end: var(--image-height); */
+}
+.bio {
+  padding-block: 0.5rem;
 }
 
 .overlap {
@@ -362,7 +372,7 @@ header .title h1:nth-child(5) {
 }
 
 .txt {
-  padding: 0;
+  padding-block-end: 2rem;
   align-items: left;
   font-family: var(--font-family-secondary);
 }
@@ -417,7 +427,10 @@ header .title h1:nth-child(5) {
   display: flex;
   gap: 1em;
   cursor: pointer;
-  background: var(--color-bg);
+}
+
+.icon a p {
+  color: white;
 }
 
 .icon object {
